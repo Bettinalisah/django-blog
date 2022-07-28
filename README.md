@@ -1,4 +1,6 @@
 # django-blog
+
+```
 A Blog application developed using Django framework 
 
 
