@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #343a40;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #343a40;
+    }
+
+    .featured-image-list{
+    object-fit: cover;
+}
+</style>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> ABOUT THE EXHIBITION </h3>
+                    <p class="text-light">Exhibition idea does not attempt to represent an accurate depiction of a visual reality but instead use colours, shapes, different forms and gestural emotion represent idea.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="{{ post.image.url }}" class="rounded" alt="{{post.title}}">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn-sm btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+        
+            {% endfor %}
+        </div>
+        {% block sidebar %} 
+            {% include 'sidebar.html' %} 
+        {% endblock sidebar %}
+    </div>
+</div>
+{%endblock%}
