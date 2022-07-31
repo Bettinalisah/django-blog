@@ -1,7 +1,7 @@
 # django-blog
 
 ```
-A Blog application developed using Django framework 
+A Blog application developed using Django and bootstrap
 
 
 
@@ -9,20 +9,14 @@ A Blog application developed using Django framework
 Install Dependencies 
 
 ```
-pip install -r requirements.txt
-```
-
-Set Database (Make Sure you are in directory same as manage.py)
-```
-python manage.py makemigrations
 python manage.py migrate
-```
-Create SuperUser 
-```
 python manage.py createsuperuser
+pip install pillow
+pip install -r requirements.txt
+
 ```
 
-After all these steps , you can start testing and developing this project. 
+After all these steps , you can start testing. 
 
 #### That's it! Happy Coding!
 
